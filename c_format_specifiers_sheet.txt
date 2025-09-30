@@ -1,0 +1,67 @@
+C Format Specifiers Cheat Sheet
+
+Integers
+- %d → signed decimal integer (e.g. 42, -7)
+- %i → same as %d (can also read octal/hex input in scanf)
+- %u → unsigned decimal integer
+- %o → unsigned octal (base 8)
+- %x → unsigned hexadecimal (lowercase a–f)
+- %X → unsigned hexadecimal (uppercase A–F)
+
+Floating-Point
+- %f → decimal float (e.g. 3.14)
+- %e → scientific notation (e.g. 3.14e+00)
+- %E → scientific notation (uppercase E)
+- %g → uses %f or %e, whichever is shorter
+- %G → uses %f or %E, whichever is shorter
+- %a → hexadecimal floating-point (rare)
+- %A → uppercase hexadecimal floating-point
+
+Modifiers:
+- %.2f → control decimal places
+- %10.2f → width 10, 2 decimals (padded)
+
+Characters & Strings
+- %c → single character
+- %s → string (stops at whitespace)
+- %[set] → scans a set of characters (e.g. %[A-Z])
+- %[^set] → scans until a character in the set (e.g. %[^\n] = until newline)
+
+Pointers & Special
+- %p → pointer (memory address, printed as hex)
+- %n → (advanced) stores the number of characters written so far into an int *
+- %% → prints a literal %
+
+Length Modifiers (for larger/smaller types)
+- %ld → long int
+- %lld → long long int
+- %lu → unsigned long int
+- %llu → unsigned long long
+- %hd → short int
+- %hhu → unsigned char (as number)
+
+Floating:
+- %lf → double (when using scanf)
+- %Lf → long double
+
+Quick Reference Table
+
+| Specifier | Meaning |
+|-----------|---------|
+| %d, %i | int |
+| %u | unsigned int |
+| %o | octal |
+| %x / %X | hex (lower/upper) |
+| %f | float/double (fixed-point) |
+| %e / %E | scientific notation |
+| %g / %G | shortest of %f/%e |
+| %c | char |
+| %s | string |
+| %p | pointer |
+| %n | chars written so far |
+| %% | literal percent |
+
+---
+
+Beginner must-know: %d, %f, %c, %s, %[^\n], and " %c".
+Later when advanced: %u, %x, %p, %lf, %lld, %e.
