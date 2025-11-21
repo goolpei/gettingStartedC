@@ -18,11 +18,7 @@ int main(){
 
         printf("Do you wish to continue (Y/N)?: ");
         scanf(" %c", &choice);
-        if (choice == 'Y'){ 
-            continue;
-        } else {
-            
-        }
+        if (choice == 'N' || choice == 'n') break;
 
     }
 
