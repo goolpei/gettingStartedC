@@ -3,7 +3,7 @@ int main(){
 
     char any[100];
     char choice;
-
+ 
     while(1){
     printf("Enter anything: ");
     fgets(any, sizeof(any), stdin);
