@@ -1,0 +1,98 @@
+📘 Comparison: cin.clear() vs cin.ignore() (C++ vs C)
+🔹 In C++ (using cin)
+
+1️⃣ cin.clear()
+
+        Purpose:
+        Clears the error state of the input stream.
+        When needed:
+        When invalid input causes cin to fail.
+
+        Example:
+        int num;
+        cin >> num;
+
+        if (cin.fail()) {
+            cin.clear();   // resets error flags
+        }
+
+
+        If user enters:
+
+        abc
+
+        cin fails and stops working until cin.clear() is called.
+
+2️⃣ cin.ignore()
+
+        Purpose:
+        Removes leftover characters from the input buffer.
+        Common use:
+        After cin >> before using getline().
+
+        Example:
+        cin.ignore(1000, '\n');
+
+        Clears everything up to the newline.
+
+
+
+💻 Equivalent in C
+C does NOT have stream states like C++.
+Everything must be handled manually.
+
+🔹 Equivalent of cin.clear() in C
+
+        Use scanf() return value to detect failure.
+
+        int num;
+
+        if (scanf("%d", &num) != 1) {
+            printf("Invalid input!\n");
+        }
+        C does not have error flags — you must check manually.
+
+🔹 Equivalent of cin.ignore() in C
+
+        Use a loop to clear the input buffer:
+
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF);
+
+
+        This removes leftover characters from stdin.
+
+🧠 Key Differences
+Feature	                            C++ (cin)	        C (scanf/getchar)
+Input system	                    Streams	            Functions
+Error state flags	                Yes	                No
+Clear error	                        cin.clear()     	Check return value
+Clear buffer	                    cin.ignore()	    while(getchar()...)
+Automatic handling	                More automatic	    Fully manual
+
+
+🎯 When To Use What
+
+If using fgets() in C:
+Remove newline from string:
+str[strcspn(str, "\n")] = '\0';
+
+If using scanf() in C:
+Check return value
+Clear leftover input with getchar() loop
+
+🚫 Important
+
+Never use:
+fflush(stdin);
+
+
+It is undefined behavior in standard C.
+
+🏁 Summary
+
+cin.clear() → resets error flags
+cin.ignore() → clears input buffer
+
+C has no direct equivalents
+In C → you manually check and manually clear
