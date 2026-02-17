@@ -1,0 +1,10 @@
+{
+  "buttons": [
+    {
+      "name": "Clean Project",
+      "task": "clean-project-task",
+      "icon": "🧹",
+      "tooltip": "Wipe out all .exe and build files"
+    }
+  ]
+}

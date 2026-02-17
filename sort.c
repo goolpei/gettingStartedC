@@ -17,6 +17,8 @@ int main(){
         i++;
     }
 
+    
+
     printf("Sorted (ascending): ");
     i = 0;
     while(i < 5) printf("%d ",arr[i++]);
